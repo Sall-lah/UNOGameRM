@@ -34,56 +34,7 @@
 
 To enforce **zero hidden-state leakage** (*no future or opponent-hand leakage*) and **strict pre-dispatch commitment** (*no post-hoc rationalization*), the platform is partitioned into three isolated zones:
 
-```text
-+===================================================================================+
-| ZONE 1: MODIFIED OPEN-SOURCE UNO SERVER & CLIENT-SERVER INFORMATION BARRIER       |
-|                                                                                   |
-|  [2-Player Non-Stacking UNO Engine] ---> [Hidden State: H_t^opp, Deck Order]      |
-|                 |                        (Strictly Blocked by Info Barrier)       |
-|                 v                                                                 |
-|  [Client State Sanitizer] ---> Emits Legal Observation o_t & Horizon Events H_t   |
-+=================|===================================================^=============+
-                  | o_t = (H_t^agent, c_t^top, col_t, |H_t^opp|, A_t) |
-                  v                                                   |
-+=====================================================================|=============+
-| ZONE 2: BUDGET-AWARE AGENT HARNESS (T_total <= T_turn - \Delta_buffer)            |
-|                                                                     |             |
-|  1. [PlugMem Intra-Round Memory]  (src/memory/)                     |             |
-|        | Retrieves Exp_t (\tau < t: Opponent Draw Constraints & Wild Declarations)|
-|        v                                                            |             |
-|  2. [LLM Call #1: Action Pruning & Prior]  (src/llm/call1_prior.py) |             |
-|        | Outputs Pruned Candidates A_t^pruned & Prior P_prior(A_t)  |             |
-|        v                                                            |             |
-|  3. [MARS Budget-Aware MCTS]  (src/search/mars_mcts.py)             |             |
-|        | Determinizes U_t, runs rollouts, outputs Search Stats (N, Q)             |
-|        v                                                            |             |
-|  4. [Action Commitment & Fallback]                                  |             |
-|        | Locks Action a_t = argmax_a N(o_t, a) (BEFORE LLM Call #2) |             |
-|        v                                                            |             |
-|  5. [LLM Call #2: Risk Elicitation & Rationale] (src/llm/call2_risk.py)           |
-|        | Outputs Conditional Risk Predictions (p_{t,A}, p_{t,B}) & Rationale      |
-|        +-----------------------+------------------------------------+             |
-+================================|==================================================+
-                                 |
-                                 v
-+===================================================================================+
-| ZONE 3: TWO-STAGE AUDIT LOGGING & POST-HORIZON EVALUATION HARNESS                 |
-|                                                                                   |
-|  [STAGE 1: PRE-EXECUTION FREEZE LOG]  (src/audit/stage1.py)                       |
-|   * Freezes (r, t, o_t, Exp_t, P_prior, N, Q, a_t, p_{t,A}, p_{t,B}, rationale)   |
-|   * Computes canonical SHA-256 & flushes to disk BEFORE dispatching a_t           |
-|                 |                                                                 |
-|                 +---> [Online Action Dispatcher] ---> Sends a_t (+ Auto "UNO!")   |
-|                                                       to Zone 1 UNO Server        |
-|                 + <--- Monitors Server Event Stream over Horizon H_t = [t, t+1)   |
-|                 v                                                                 |
-|  [STAGE 2: POST-HORIZON EVALUATION & PLUGMEM UPDATER] (src/audit/stage2.py)       |
-|   * Separates Penalty Draw (A_pen -> y_{t,A}=1) vs Voluntary Draw (A_nop -> 0)    |
-|   * Labels Opponent Win (y_{t,B}) & classifies Stratum Horizon (1 / 2 / 3)        |
-|   * Verifies t_freeze < t_dispatch <= t_eval & Stage 1 SHA-256 integrity          |
-|   * Triggers PlugMem.update(t -> t+1) & writes paired record d_{r,t}              |
-+===================================================================================+
-```
+<img width="1600" height="682" alt="Three-Zone Architecture" src="https://github.com/user-attachments/assets/3bd2b59c-d72c-4b6a-aba9-0e7a94fe505b" />
 
 ### Core Subsystem Highlights
 
