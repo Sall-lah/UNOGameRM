@@ -1,0 +1,82 @@
+{
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\card.py": {
+    "mtime": 1792586631.0449252,
+    "ast_hash": "623c0be44f4fd4af2f9b35a006e4478a",
+    "semantic_hash": "623c0be44f4fd4af2f9b35a006e4478a"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\cli.py": {
+    "mtime": 1792586631.0449252,
+    "ast_hash": "9510be828af7bdcddb2ee81e5b675eb8",
+    "semantic_hash": "9510be828af7bdcddb2ee81e5b675eb8"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\cli_tools.py": {
+    "mtime": 1792586631.0462828,
+    "ast_hash": "6ccdaf1ed294bbb2b6e80f4102721794",
+    "semantic_hash": "6ccdaf1ed294bbb2b6e80f4102721794"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\deck.py": {
+    "mtime": 1792586631.0462828,
+    "ast_hash": "ed7a712518243edff032afe5936bc444",
+    "semantic_hash": "ed7a712518243edff032afe5936bc444"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\install.sh": {
+    "mtime": 1792586631.0462828,
+    "ast_hash": "6ea1b9b8b9294ab347bcdf8f6b20c2a3",
+    "semantic_hash": "6ea1b9b8b9294ab347bcdf8f6b20c2a3"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\main.py": {
+    "mtime": 1792586631.0477479,
+    "ast_hash": "818bd1bdea12424650930153fc59cbee",
+    "semantic_hash": "818bd1bdea12424650930153fc59cbee"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\player.py": {
+    "mtime": 1792586631.0477479,
+    "ast_hash": "dd94d3ab61f75b8111e46bcf0747237f",
+    "semantic_hash": "dd94d3ab61f75b8111e46bcf0747237f"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\uno.py": {
+    "mtime": 1792586631.0487535,
+    "ast_hash": "b344d9367d67df897283c50f6b372de8",
+    "semantic_hash": "b344d9367d67df897283c50f6b372de8"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\.github\\workflows\\pyinstaller.yml": {
+    "mtime": 1792586630.9385738,
+    "ast_hash": "6f078ccb5fe4874e2ce4bdd4dce6478a",
+    "semantic_hash": "6f078ccb5fe4874e2ce4bdd4dce6478a"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\environment.yml": {
+    "mtime": 1792587117.270509,
+    "ast_hash": "6253e58694826fa82cc553a48bc3488e",
+    "semantic_hash": "6253e58694826fa82cc553a48bc3488e"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\requirements.txt": {
+    "mtime": 1792586631.0487535,
+    "ast_hash": "d99655a06ea46fd448e605b611397788",
+    "semantic_hash": "d99655a06ea46fd448e605b611397788"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\version.txt": {
+    "mtime": 1792586631.0497637,
+    "ast_hash": "22578c96ed663514114412086959d64c",
+    "semantic_hash": "22578c96ed663514114412086959d64c"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\README Images\\declared_uno_and reversed_turn_order.png": {
+    "mtime": 1792586630.9410808,
+    "ast_hash": "b3b946afdc45c37ca6d10a0fb31dbcd1",
+    "semantic_hash": "b3b946afdc45c37ca6d10a0fb31dbcd1"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\README Images\\lesgo_i_win.png": {
+    "mtime": 1792586630.9431045,
+    "ast_hash": "52ca64442332accb82a1f749224ab4c9",
+    "semantic_hash": "52ca64442332accb82a1f749224ab4c9"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\README Images\\setup_screen.png": {
+    "mtime": 1792586630.9461102,
+    "ast_hash": "69fc1e1830bdb4294eb1674681ffafe6",
+    "semantic_hash": "69fc1e1830bdb4294eb1674681ffafe6"
+  },
+  "C:\\Users\\LENOVO\\Documents\\VsCode\\GitHub\\UNOGameRM\\README Images\\variety_of_cards_in_hand.png": {
+    "mtime": 1792586630.947777,
+    "ast_hash": "54bdd5e918f73f570513aa030c2c8f5c",
+    "semantic_hash": "54bdd5e918f73f570513aa030c2c8f5c"
+  }
+}

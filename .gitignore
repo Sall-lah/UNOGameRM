@@ -5,3 +5,7 @@
 /UNO.py.spec
 /UNO.py-github-release.spec
 /__pycache__
+docs
+.agent
+.kiro
+openspec

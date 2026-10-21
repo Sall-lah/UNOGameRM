@@ -1,0 +1,87 @@
+# ==============================================================================
+# Complete Experimental Configuration for UNO Decision-Risk Research Protocol
+# ==============================================================================
+
+# 1. Engine configuration
+engine:
+  seed: null
+
+# 2. Opponent configuration (fixed intellect tier in {1, 2, 3})
+opponent:
+  intellect: 3
+
+# 3. Agent policy configuration
+agent:
+  d4_response: accept
+
+# 4. Information barrier configuration
+barrier:
+  refine_unseen_pool: false
+
+# 5. PlugMem dynamic memory configuration
+memory:
+  draw_decay_gamma: 0.75
+  prune_threshold: 0.35
+  top_k_semantic: 5
+  top_k_procedural: 2
+  embedder: local_fallback
+  seed_procedural_priors: true
+  enable_llm_refiner: false
+  w_sim: 0.40
+  w_tag: 0.35
+  w_conf: 0.15
+  w_rec: 0.10
+  recency_lambda: 0.15
+  max_hops: 2
+
+# 6. MARS Budget-Aware Imperfect-Information MCTS configuration
+mcts:
+  c_uct: 1.25
+  penalty_weight_w: -0.07
+  target_sim_latency_s: 0.002
+  max_rollout_depth: 6
+  max_simulations: 400
+  alpha1: 0.35
+  alpha2: 0.15
+  alpha3: 0.25
+
+# 7. LLM Client configuration
+llm:
+  base_url: http://localhost:8000/v1
+  model: gpt-4o-mini
+  api_key_env: OPENAI_API_KEY
+  temperature: 0.2
+  max_candidates: 4
+  call1_timeout_s: 2.0
+  call2_timeout_s: 2.0
+
+# 8. Turn budget allocation
+budget:
+  t_turn_s: 5.0
+  delta_buffer_s: 0.5
+  llm2_reserve_s: 1.0
+
+# 9. Two-stage audit logging configuration
+audit:
+  output_root: data
+  dataset_split: pilot
+  strict_invariant: true
+
+# 10. Statistical analysis & calibration configuration
+analysis:
+  bootstrap_B: 2000
+  bootstrap_seed: 42
+  ece_bins: 10
+  tau_risk: 0.5
+  audit_sample_size: 100
+  audit_sample_seed: 42
+  output_dir: reports
+
+# 11. Experiment runbook execution parameters
+experiment:
+  config_version: v1.0-frozen
+  r_pilot: 15
+  seed_base: 10000
+  pilot_data_dir: data/pilot/
+  main_data_dir: data/main_experiment/
+  ci_half_width_target: 0.025

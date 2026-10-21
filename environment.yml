@@ -1,0 +1,15 @@
+name: uno-research
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - scipy
+  - pyarrow
+  - pip
+  - pip:
+      - colorama==0.4.6
+      - pydantic==2.6.0
+      - httpx==0.26.0
